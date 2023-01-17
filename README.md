@@ -37,7 +37,7 @@
 - has_one :order
 
 
-## orders table
+## addresses table
 
 | Column        | Type       | Options                        |
 |---------------|------------|--------------------------------|
@@ -47,9 +47,19 @@
 | addresses     | string     | null: false                    |
 | building      | string     |                                |
 | phone_number  | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
-| item          | references | null: false, foreign_key: true |
+
+### Association
+- has_one :order
+
+
+## orders table
+| Column  | Type       | Options                        |
+|---------|------------|--------------------------------|
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
+| address | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
 - has_one :item
+- has_one :address
