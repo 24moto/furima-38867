@@ -2,18 +2,18 @@
 
 ## users table
 
-| Column           | Type   | Options                   |
-|------------------|--------|---------------------------|
-| nickname         | string | null: false               |
-| email            | string | null: false, unique: true |
-| password         | string | null: false               |
-| last_name        | string | null: false               |
-| first_name       | string | null: false               |
-| last_name_kana   | string | null: false               |
-| first_name_kana  | string | null: false               |
-| birth_date_year  | string | null: false               |
-| birth_date_month | string | null: false               |
-| birth_date_day   | string | null: false               |
+| Column             | Type   | Options                   |
+|--------------------|--------|---------------------------|
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
+| birth_date_year    | string | null: false               |
+| birth_date_month   | string | null: false               |
+| birth_date_day     | string | null: false               |
 
 ### Association
 - has_many :items
