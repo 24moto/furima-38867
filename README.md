@@ -50,7 +50,7 @@
 | order         | references | null: false, foreign_key: true |
 
 ### Association
-- has_one :order
+- belongs_to :order
 
 
 ## orders table
