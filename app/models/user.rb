@@ -10,28 +10,28 @@ class User < ApplicationRecord
   
   validates :password, format: {
                          with: VALID_PASSWORD_REGEX,
-                         message: "Include both letters and numbers"
+                         message: " is invalid.Include both letters and numbers"
                        }
   validates :nickname, presence: true
   validates :last_name, presence: true,
                         format: {
                           with: ZENKAKU_REGEX,
-                          message: "Input full-width characters"
+                          message: " is invalid.Input full-width characters"
                         }
   validates :first_name, presence: true,
                          format: {
                            with: ZENKAKU_REGEX,
-                           message: "Input full-width characters"
+                           message: " is invalid.Input full-width characters"
                          }
   validates :last_name_kana, presence: true,
                              format: {
                                with: KATAKANA_REGEXP,
-                               message: "Input full-width katakana characters"
+                               message: " is invalid.Input full-width katakana characters"
                              }
   validates :first_name_kana, presence: true,
                               format: {
                                 with: KATAKANA_REGEXP,
-                                message: "Input full-width katakana characters"
+                                message: " is invalid.Input full-width katakana characters"
                               }
   validates :birth_date, presence: true
 end
