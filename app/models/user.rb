@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  ZENKAKU_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
+  ZENKAKU_REGEX = /\A[ぁ-んァ-ヶ一-龥々]/.freeze
   KATAKANA_REGEXP = /\A[\p{katakana} ー－&&[^ -~｡-ﾟ]]+\z/.freeze
 
   validates :password, format: {
