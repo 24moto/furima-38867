@@ -9,6 +9,9 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :scheduled_delivery
 
+  HANKAKU_NUM = /\A[0-9]+\z/.freeze
+
+  validates :image,                  presence: true
   validates :name,                   presence: true
   validates :info,                   presence: true
   validates :category_id,            numericality: { other_than: 1, message: "can't be blank" }
@@ -21,7 +24,7 @@ class Item < ApplicationRecord
                                        greater_than_or_equal_to: 300,
                                        less_than_or_equal_to: 9999999,
                                        message: 'is out of setting range'
-                                      }
-                                     format: { with: /\A[0-9]+\z/, message: 'is invalid. Input half-width characters' }
+                                      },
+                                     format: { with: HANKAKU_NUM, message: 'is invalid. Input half-width characters' }
 
 end
