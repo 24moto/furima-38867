@@ -54,7 +54,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include 'Phone number is invalid. Input only number'
       end
       it '電話番号が11桁より多いだと購入できない' do
-        @order_address.phone_number = '123456789012'
+        @order_address.phone_number = '1234567890123'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include 'Phone number is invalid. Input only number'
       end
